@@ -1,18 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
-
-// eslint-disable-next-line no-unused-vars
 import Quagga from "quagga";
-
 import { Video } from "./styles";
 
-function Main() {
+export function Main() {
   const onDetected = (result) => {
     Quagga.offDetected(onDetected);
 
-    const isbn = result.codeResult.code;
+    let isbn = result.codeResult.code;
 
     alert(isbn);
   };
@@ -52,5 +46,3 @@ function Main() {
 
   return <Video id="video" />;
 }
-
-export default Main;
